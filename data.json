@@ -1,13 +1,13 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "title": "Hero",
     "sku": "001",
     "description": "description hero",
-    "quantity": 100,
+    "quantity": 95,
     "images": [
-      "assets/image1.jpeg",
-      "assets/image2.png"
+      "image1.jpeg",
+      "image2.png"
     ]
   },
   {
@@ -15,9 +15,9 @@
     "title": "Kasandra",
     "sku": "002",
     "description": "description Kasandra",
-    "quantity": 100,
+    "quantity": 99,
     "images": [
-      "assets/image3.png"
+      "image3.png"
     ]
   },
   {
@@ -27,8 +27,8 @@
     "description": "description Alexios",
     "quantity": 100,
     "images": [
-      "assets/image4.jpg",
-      "assets/image5.jpeg"
+      "image4.jpg",
+      "image5.jpeg"
     ]
   },
   {
@@ -36,10 +36,10 @@
     "title": "Pythagoras",
     "sku": "004",
     "description": "description Pythagoras",
-    "quantity": 100,
+    "quantity": 99,
     "images": [
-      "assets/image4.jpg",
-      "assets/image5.jpeg"
+      "image4.jpg",
+      "image5.jpeg"
     ]
   },
   {
@@ -49,8 +49,8 @@
     "description": "description Tordoros",
     "quantity": 100,
     "images": [
-      "assets/image4.jpg",
-      "assets/image5.jpeg"
+      "image4.jpg",
+      "image5.jpeg"
     ]
   },
   {
@@ -58,10 +58,10 @@
     "title": "Sixers",
     "sku": "006",
     "description": "description Sixers",
-    "quantity": 100,
+    "quantity": 90,
     "images": [
-      "assets/image4.jpg",
-      "assets/image5.jpeg"
+      "image4.jpg",
+      "image5.jpeg"
     ]
   },
   {
@@ -69,10 +69,10 @@
     "title": "Alexandra",
     "sku": "007",
     "description": "description Alexandra",
-    "quantity": 100,
+    "quantity": 99,
     "images": [
-      "assets/image4.jpg",
-      "assets/image5.jpeg"
+      "image4.jpg",
+      "image5.jpeg"
     ]
   },
   {
@@ -80,10 +80,30 @@
     "title": "Ouroboros",
     "sku": "008",
     "description": "description Ouroboros",
+    "quantity": 99,
+    "images": [
+      "image4.jpg",
+      "image5.jpeg"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "NEW",
+    "sku": "NEWS",
+    "description": "description news",
     "quantity": 100,
     "images": [
-      "assets/image4.jpg",
-      "assets/image5.jpeg"
+      "certificate.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "NEW",
+    "sku": "NEWS",
+    "description": "description news",
+    "quantity": 100,
+    "images": [
+      "certificate.jpg"
     ]
   }
 ]

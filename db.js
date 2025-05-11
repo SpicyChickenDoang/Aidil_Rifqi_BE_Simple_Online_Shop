@@ -20,43 +20,51 @@ function getById(id) {
     return readData().find(item => item.id === id);
 }
 
-function addEntry(name, dob, base64Image) {
+function addEntry(body, fileNames) {
     const data = readData();
     const newId = data.length ? Math.max(...data.map(d => d.id)) + 1 : 1;
 
     data.push({
         id: newId,
-        name,
-        dob,
-        image: base64Image
+        title: body.title,
+        sku: body.sku,
+        description: body.description,
+        quantity: body.quantity,
+        images: fileNames
     });
 
     writeData(data);
     return newId;
 }
 
-function updateEntry(id, name, dob, base64Image) {
+function updateEntry(buy, qty) {
     const data = readData();
-    const index = data.findIndex(d => d.id === id);
+    const index = data.findIndex(item => item.id == buy.id);
+    const current = data.find(item => item.id == buy.id);
+    
     if (index === -1) return false;
 
-    data[index] = { id, name, dob, image: base64Image };
+    if (current.quantity < qty) {
+        console.log(current.quantity, qty);
+        
+        return false
+    }
+
+    data[index] = {
+        id: parseInt(buy.id),
+        title: current.title,
+        sku: current.sku,
+        description: current.description,
+        quantity: (current.quantity - qty),
+        images: current.images
+    };
     writeData(data);
     return true;
-}
-
-function deleteEntry(id) {
-    let data = readData();
-    const initialLength = data.length;
-    data = data.filter(d => d.id !== id);
-    writeData(data);
-    return data.length < initialLength;
 }
 
 module.exports = {
     getAll,
     getById,
     addEntry,
-    updateEntry,
-    deleteEntry
+    updateEntry
 };

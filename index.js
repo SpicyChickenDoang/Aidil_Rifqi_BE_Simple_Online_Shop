@@ -7,45 +7,49 @@ const path = require('path');
 const cors = require('cors');
 app.use(cors());
 
-let emailFunction = require('./email');
+const emailFunction = require('./email');
+const fileFunction = require('./files');
+const authFunction = require('./auth');
 
 app.use(bodyParser.json({ limit: '10mb' }));
-
 app.use('/assets', express.static(path.join(__dirname, 'public', 'assets')));
 
 app.get('/', (req, res) => {
-    res.sendStatus(200);json()
+    res.sendStatus(200); json()
+});
+
+app.post('/entries', fileFunction.array('images'), (req, res) => {
+    const fileNames = req.files.map(file => file.filename);
+    const id = db.addEntry(req.body, fileNames);
+
+    res.status(201);
 });
 
 app.get('/entries', (req, res) => {
     res.json(db.getAll());
 });
 
-app.get('/entries/:id', (req, res) => {
-    const item = db.getById(Number(req.params.id));
-    item ? res.json(item) : res.status(404).send('Not found');
-});
+app.post('/login', (req, res) => {
+    const token = authFunction.createToken(req.body);
+    console.log(req.body);
 
-app.post('/entries', (req, res) => {
-    const { name, dob, image } = req.body;
-    const id = db.addEntry(name, dob, image);
-    res.status(201).json({ id });
+    res.status(200).json({ token: token });
 });
 
 app.post('/checkout', async (req, res) => {
+    let failed = false;
+    req.body.items.forEach(item => {
+        const update = db.updateEntry(item, item.qty);
+        if (update == false) {
+            failed = true;
+        }
+    });
+
+    if (failed) {
+        return res.status(422).json({ message: "Fail" });
+    }
     const sent = await emailFunction.send(req.body.email, "Succesfull Purchase", req.body.items);
-    res.status(201).json({message: "Success"});
-});
-
-app.put('/entries/:id', (req, res) => {
-    const { name, dob, image } = req.body;
-    const updated = db.updateEntry(Number(req.params.id), name, dob, image);
-    updated ? res.sendStatus(200) : res.sendStatus(404);
-});
-
-app.delete('/entries/:id', (req, res) => {
-    const deleted = db.deleteEntry(Number(req.params.id));
-    deleted ? res.sendStatus(200) : res.sendStatus(404);
+    res.status(201).json({ message: "Success" });
 });
 
 app.listen(3000, () => console.log('Server running on http://localhost:3000'));

@@ -15,7 +15,7 @@ app.use(bodyParser.json({ limit: '10mb' }));
 app.use('/assets', express.static(path.join(__dirname, 'public', 'assets')));
 
 app.get('/', (req, res) => {
-    res.sendStatus(200); json()
+    return res.sendStatus(200).json({ message: "Hello There" });
 });
 
 app.post('/entries', fileFunction.array('images'), (req, res) => {

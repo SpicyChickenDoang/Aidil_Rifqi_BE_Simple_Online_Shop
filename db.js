@@ -41,6 +41,7 @@ function updateEntry(buy, qty) {
     const data = readData();
     const index = data.findIndex(item => item.id == buy.id);
     const current = data.find(item => item.id == buy.id);
+    // const current = data[index];
     
     if (index === -1) return false;
 
@@ -51,12 +52,13 @@ function updateEntry(buy, qty) {
     }
 
     data[index] = {
-        id: parseInt(buy.id),
-        title: current.title,
-        sku: current.sku,
-        description: current.description,
+        // id: parseInt(buy.id),
+        // title: current.title,
+        // sku: current.sku,
+        // description: current.description,
+        ...current,
         quantity: (current.quantity - qty),
-        images: current.images
+        // images: current.images
     };
     writeData(data);
     return true;

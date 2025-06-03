@@ -31,10 +31,10 @@ exports.send = async (to, subject, items) => {
 
   try {
     const info = await transporter.sendMail(mailOptions);
-    console.log('✅ Email sent:', info.messageId);
+    console.log('Email sent:', info.messageId);
     return true;
   } catch (error) {
-    console.error('❌ Failed to send email:', error);
+    console.error('Failed to send email:', error);
     return false;
   }
 }

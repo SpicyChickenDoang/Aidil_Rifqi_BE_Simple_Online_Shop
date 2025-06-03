@@ -1,109 +1,88 @@
 [
   {
     "id": "1",
-    "title": "Hero",
+    "title": "Adizero",
     "sku": "001",
-    "description": "description hero",
-    "quantity": 95,
+    "description": "Adidas Adizero",
+    "quantity": 89,
     "images": [
-      "image1.jpeg",
-      "image2.png"
+      "adidas-adizero-1.png",
+      "adidas-adizero-2.png"
     ]
   },
   {
     "id": 2,
-    "title": "Kasandra",
+    "title": "Samba",
     "sku": "002",
-    "description": "description Kasandra",
-    "quantity": 99,
+    "description": "Adidas Samba",
+    "quantity": 97,
     "images": [
-      "image3.png"
+      "adidas-samba-1.png",
+      "adidas-samba-2.png"
     ]
   },
   {
     "id": 3,
-    "title": "Alexios",
+    "title": "Asics",
     "sku": "003",
-    "description": "description Alexios",
-    "quantity": 100,
+    "description": "Asics Gel-Resolution",
+    "quantity": 97,
     "images": [
-      "image4.jpg",
-      "image5.jpeg"
+      "asics-1.png"
     ]
   },
   {
     "id": 4,
-    "title": "Pythagoras",
+    "title": "Jordan",
     "sku": "004",
-    "description": "description Pythagoras",
+    "description": "Air Jordan 1 Retro",
     "quantity": 99,
     "images": [
-      "image4.jpg",
-      "image5.jpeg"
+      "jordan-1.png",
+      "jordan-2.png"
     ]
   },
   {
     "id": 5,
-    "title": "Tordoros",
+    "title": "Monster",
     "sku": "005",
-    "description": "description Tordoros",
+    "description": "On Cloudmonster 1",
     "quantity": 100,
     "images": [
-      "image4.jpg",
-      "image5.jpeg"
+      "monster-1.png",
+      "monster-2.png"
     ]
   },
   {
     "id": 6,
-    "title": "Sixers",
+    "title": "1906L",
     "sku": "006",
-    "description": "description Sixers",
-    "quantity": 90,
+    "description": "New Balance 1906L",
+    "quantity": 87,
     "images": [
-      "image4.jpg",
-      "image5.jpeg"
+      "nb-1.png"
     ]
   },
   {
     "id": 7,
-    "title": "Alexandra",
+    "title": "P6000",
     "sku": "007",
-    "description": "description Alexandra",
+    "description": "Nike P6000 Silver",
     "quantity": 99,
     "images": [
-      "image4.jpg",
-      "image5.jpeg"
+      "p6000-1.png",
+      "p6000-2.png"
     ]
   },
   {
     "id": 8,
-    "title": "Ouroboros",
+    "title": "Zoom",
     "sku": "008",
-    "description": "description Ouroboros",
+    "description": "Nike Zoom Running",
     "quantity": 99,
     "images": [
-      "image4.jpg",
-      "image5.jpeg"
-    ]
-  },
-  {
-    "id": 9,
-    "title": "NEW",
-    "sku": "NEWS",
-    "description": "description news",
-    "quantity": 100,
-    "images": [
-      "certificate.jpg"
-    ]
-  },
-  {
-    "id": 10,
-    "title": "NEW",
-    "sku": "NEWS",
-    "description": "description news",
-    "quantity": 100,
-    "images": [
-      "certificate.jpg"
+      "zoom-1.png",
+      "zoom-2.png"
     ]
   }
 ]
